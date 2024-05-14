@@ -83,20 +83,5 @@ output "network_id" {
 output "asia_vpn_ip_address" {
   value = module.asia_vpn.vpn_ip_address
 }
-variable "asia_network_config" {
-  type = object({
-    network_name             = string
-    auto_create_subnetworks  = bool
-    subnet_name              = string
-    subnet_cidr              = string
-    region                   = string
-    private_ip_google_access = bool
-    firewall = object({
-      name            = string
-      ports           = list(string)
-      source_ranges   = list(string)
-      target_tags     = list(string)
-    })
-  })
-}
+
 
